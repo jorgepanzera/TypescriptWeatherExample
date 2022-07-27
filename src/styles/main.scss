@@ -281,3 +281,57 @@ body {
 	font-weight: 700;
 	
 }
+
+
+ 
+ #load-div{
+	 width: 500px;
+	 height: 500px;	
+	 position: fixed;
+	 left: 20px;
+	 top: 20px;
+	 z-index: 10000;
+ }
+ 
+ #load-spinner{
+	 height: 100%;
+	 width: 100%;
+	 position: fixed;
+	 -webkit-transition: all 1s ease;
+	 -o-transition: all 1s ease;
+	 transition: all 1s ease;
+	 z-index: 10000;
+	 background: #00000070;
+ }
+ 
+ #load{
+	 border: 15px solid #ccc;
+	 border-top-color: #5151E5;
+	 border-top-style: groove;
+	 height: 100px;
+	 width: 100px;
+	 border-radius: 100px;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 right: 0;
+	 bottom: 0;
+	 margin: auto;
+	 -webkit-animation: spin 1.5s linear infinite;
+	 -o-animation: spin 1.5s linear infinite;
+	 animation: spin 1.5s linear infinite;
+ }
+ 
+ @keyframes spin{
+	 from{transform: rotate(0deg);}
+	 to{transform: rotate(360deg);}
+ }
+ 
+ #map{
+	 height: 253px;
+	 border-style: solid;
+	 border-radius: 2%;
+	 margin-top: 4px;
+ }
+ 
+ 

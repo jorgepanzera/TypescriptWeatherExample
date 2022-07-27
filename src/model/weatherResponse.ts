@@ -7,6 +7,7 @@ import drizzle from '../images/drizzle.png';
 import thunderstroms from '../images/thunderstroms.png';
 import snow from '../images/snow.png';
 import foggy from '../images/foggy.png';
+import empty from '../images/empty.png';
 
 export interface WeatherResponse {
     weather: [Weather];
@@ -58,6 +59,7 @@ export const WeatherIcon = {
     "13n": snow,
     "50d": foggy,
     "50n": foggy,
+    "00": empty
 } as const;
 
 export const DayOfWeek = [
