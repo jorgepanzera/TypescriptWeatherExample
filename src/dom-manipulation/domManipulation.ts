@@ -13,6 +13,7 @@ const maxTemperature = (document.getElementById("text-temp-max") as HTMLSpanElem
 const minTemperature = (document.getElementById("text-temp-min") as HTMLSpanElement);
 const humidity = (document.getElementById("text-humidity") as HTMLSpanElement);
 const windSpeed = (document.getElementById("text-wind") as HTMLSpanElement);
+const loader = (document.getElementById("loader")) as HTMLDivElement;   
 
 
 // TODO: Create the logic of the function
@@ -120,3 +121,5 @@ function validateImage(values: string[]): asserts values is WeatherIcontype[] {
 function isValidImage(value: string): value is WeatherIcontype {
     return value in WeatherIcon;
 }
+
+export const clocks = ["🕐", "🕜", "🕑","🕝", "🕒", "🕞", "🕓", "🕟", "🕔", "🕠", "🕕", "🕡", "🕖", "🕢",  "🕗", "🕣", "🕘", "🕤", "🕙",  "🕥", "🕚", "🕦",  "🕛", "🕧"];
