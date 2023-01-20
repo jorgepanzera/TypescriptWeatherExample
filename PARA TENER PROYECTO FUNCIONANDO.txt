@@ -52,3 +52,12 @@ La variable de entorno NODE_OPTIONS no la ve el terminal de VSCODE, entonces agr
     "terminal.integrated.env.windows": {
         "NODE_OPTIONS": "--openssl-legacy-provider"
     }
+
+En tasks.json
+    En problemMatcher, seccion background
+    "beginsPattern" y "endsPattern" tienen que decir exactamente lo que la consola dice, no sirve
+    copiar ejemplos de webs
+					"beginsPattern": "(node:2104)",
+					"endsPattern": "ms"
+                    el beginsPattern es un warning que da node al compilar este proyecto
+                    el endsPattern ms son los milisegundos que demoro en compilar

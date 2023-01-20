@@ -13,6 +13,9 @@ const maxTemperature = (document.getElementById("text-temp-max") as HTMLSpanElem
 const minTemperature = (document.getElementById("text-temp-min") as HTMLSpanElement);
 const humidity = (document.getElementById("text-humidity") as HTMLSpanElement);
 const windSpeed = (document.getElementById("text-wind") as HTMLSpanElement);
+const loader = (document.getElementById("loader")) as HTMLDivElement;
+const clocksSpinner = (document.getElementById("clocks-spinner")) as HTMLDivElement;
+let preserveCityInput : string = "";
 
 
 // TODO: Create the logic of the function
@@ -120,3 +123,55 @@ function validateImage(values: string[]): asserts values is WeatherIcontype[] {
 function isValidImage(value: string): value is WeatherIcontype {
     return value in WeatherIcon;
 }
+
+const clocks = ["🕐", "🕜", "🕑","🕝", "🕒", "🕞", "🕓", "🕟", "🕔", "🕠", "🕕", "🕡", "🕖", "🕢",  "🕗", "🕣", "🕘", "🕤", "🕙",  "🕥", "🕚", "🕦",  "🕛", "🕧"];
+
+const interval = 125;
+
+const loadClocks = (arr : any) :void => {
+    setInterval(() => {
+      clocksSpinner.innerText = arr[Math.floor(Math.random() * arr.length)];
+      //console.log(Math.floor(Math.random() * arr.length))
+    }, interval);
+}
+
+const initClocks = () : void => {
+  loadClocks(clocks);
+}
+
+const stopClocks = () : void => {
+    clocksSpinner.innerText = "";
+}
+
+/*
+export function initSpinner() {
+    if (loader != undefined) {
+        //loader.innerHTML = htmlSpinner;
+        initClocks();
+        loader.style.visibility = "visible";
+        loader.style.opacity = "1";
+    }
+  }
+  
+  export function stopSpinner() {
+    if (loader != undefined) {
+        //loader.innerHTML = "";
+        stopClocks();
+        loader.style.visibility = "hidden";
+        loader.style.opacity = "0";
+    } */
+
+    export function initSpinner() {
+        if (cityImput != undefined) {
+            preserveCityInput = cityImput.value;
+            cityImput.value = "Searching..."
+        }
+      }
+      
+      export function stopSpinner() {
+        if (cityImput != undefined) {
+            cityImput.value = preserveCityInput;
+            preserveCityInput = "";
+        }
+      }
+  
